@@ -12,15 +12,18 @@ body{
     font-weight: bold;
     font-size: 24px;
 }
+.btn-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5em;
+}
 .calculator-btn{
-    padding: 1em 1.5em;
+    padding: 2em 2.5em;
     background-color: #333333;
     border: 1px solid transparent;
     color: white;
     font-family: 'Roboto'
 }
-.btn-section{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.5em;
+.delete-img{
+    width: 20px;
 }
