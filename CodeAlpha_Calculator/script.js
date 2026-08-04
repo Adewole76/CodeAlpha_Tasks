@@ -35,5 +35,5 @@ const backspaceFinalValue = () =>{
 
 const resetFinalValue = () =>{
     finalValue = '';
-    calculationDisplay.innerHTML = finalValue;
+    calculationDisplay.innerHTML = '0';
 }

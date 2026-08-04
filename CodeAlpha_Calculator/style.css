@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculation-display{
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 24px;
+}
+.calculator-btn{
+    padding: 1em 1.5em;
+    background-color: #333333;
+    border: 1px solid transparent;
+    color: white;
+    font-family: 'Roboto'
+}
+.btn-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5em;
+}

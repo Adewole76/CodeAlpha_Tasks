@@ -5,28 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <main>
     <p class="calculation-display"></p>
-    <button onclick="addToFinalValue(1)">1</button>
-    <button onclick="addToFinalValue(2)">2</button>
-    <button onclick="addToFinalValue(3)">3</button>
-    <button onclick="addToFinalValue(4)">4</button>
-    <button onclick="addToFinalValue(5)">5</button>
-    <button onclick="addToFinalValue(6)">6</button>
-    <button onclick="addToFinalValue(7)">7</button>
-    <button onclick="addToFinalValue(8)">8</button>
-    <button onclick="addToFinalValue(9)">9</button>
-    <button onclick="addToFinalValue(0)">0</button>
-    <button onclick="addToFinalValueforSigns(' - ')">-</button>
-    <button onclick="addToFinalValueforSigns('+')">+</button>
-    <button onclick="addToFinalValueforSigns(' * ')">*</button>
-    <button onclick="addToFinalValueforSigns(' / ')">/</button>
-    <button onclick="resetFinalValue()">AC</button>
-    <button onclick="convertToCalculation()">=</button>
-    <button onclick="backspaceFinalValue()">x</button>
-    <button onclick="addToFinalValue('.')">.</button>
-    <button></button>
+    <section class="btn-section">
+        <button class="calculator-btn" onclick="addToFinalValue(1)">1</button>
+        <button class="calculator-btn" onclick="addToFinalValue(2)">2</button>
+        <button class="calculator-btn" onclick="addToFinalValue(3)">3</button>
+        <button class="calculator-btn" onclick="addToFinalValue(4)">4</button>
+        <button class="calculator-btn" onclick="addToFinalValue(5)">5</button>
+        <button class="calculator-btn" onclick="addToFinalValue(6)">6</button>
+        <button class="calculator-btn" onclick="addToFinalValue(7)">7</button>
+        <button class="calculator-btn" onclick="addToFinalValue(8)">8</button>
+        <button class="calculator-btn" onclick="addToFinalValue(9)">9</button>
+        <button class="calculator-btn" onclick="addToFinalValue(0)">0</button>
+        <button class="calculator-btn" onclick="addToFinalValueforSigns(' - ')">-</button>
+        <button class="calculator-btn" onclick="addToFinalValueforSigns('+')">+</button>
+        <button class="calculator-btn" onclick="addToFinalValueforSigns(' * ')">*</button>
+        <button class="calculator-btn" onclick="addToFinalValueforSigns(' / ')">/</button>
+        <button class="calculator-btn" onclick="resetFinalValue()">AC</button>
+        <button class="calculator-btn" onclick="convertToCalculation()">=</button>
+        <button class="calculator-btn" onclick="backspaceFinalValue()">x</button>
+        <button class="calculator-btn" onclick="addToFinalValue('.')">.</button>
+    </section>
+   </main>
     <script src="script.js"></script>
 </body>
 </html>
