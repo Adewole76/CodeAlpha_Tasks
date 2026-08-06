@@ -1,5 +1,10 @@
 const imagesContainer = document.querySelector('.images-container');
-const filterButtons = document.querySelectorAll('.filter')
+const filterButtons = document.querySelectorAll('.filter');
+const lightBoxView = document.querySelector('.lightbox-view');
+const buttonsImage = document.querySelector('.button-image');
+const lightBoxImageContainer = document.querySelector('.light-box-image')
+const previousButton = document.querySelector('.previous');
+const nextButton = document.querySelector('.next');
 console.log(filterButtons)
 console.log(imagesContainer)
 let Images = [
@@ -117,13 +122,14 @@ let Images = [
 const mappingImagesArray = (arr) => {
 const mappedImagesArray = arr.map((image,index) => {
     return `
-    <div class="image-container">
+    <div class="image-container" data-user-id="${index}">
     <img class="actual-image" src="${image.ImageSource}">
     <div class="image-overlay"></div>
     <p class="image-caption">${image.ImageCaption}</p>
     </div>
     `
 }).join('')
+console.log(mappedImagesArray);
 imagesContainer.innerHTML = mappedImagesArray;
 }
 mappingImagesArray(Images);
@@ -146,3 +152,24 @@ for(let i = 0; i < filterButtons.length; i++){
     })
 }
 }
+let currentLightboxImage = 0;
+imagesContainer.addEventListener('click',(event) =>{
+  if(event.target.closest('.image-container')){
+    const particularImage = event.target.closest('.image-container');
+    console.log(particularImage);
+    const particularImageId = particularImage.dataset.userId;
+    currentLightboxImage = Number(particularImageId);
+    let imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
+    console.log(imageToBeDisplay);
+    lightBoxView.classList.remove('hidden');
+    lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+
+}
+})
+nextButton.addEventListener('click', function(){
+    // currentLightboxImage = currentLightboxImage + 1;
+    console.log('i am working')
+    // console.log(currentLightboxImage)
+    // imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
+    // lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+})
