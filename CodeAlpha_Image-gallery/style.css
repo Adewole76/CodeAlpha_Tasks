@@ -1,0 +1,98 @@
+body{
+    background:#fafaf8;
+}
+hr{
+    background-color: #d4d4ce;
+    border: 1px solid transparent;
+}
+main{
+    width: 100%;
+}
+header h2{
+  font-family: "DM Serif Display", serif;
+  font-size: 4em;
+  font-weight: 200;
+  margin: 0;
+  margin-top: 0;
+}
+header p{
+     font-family: "Inter", sans-serif;
+     color: #8a8a85;
+     font-size: 12px;
+     margin-bottom: 0;
+     font-weight: 400;
+}
+.image-filter{
+    margin: 2em 0 2em 0;
+}
+.image-filter button{
+  background-color: #fafaf8;
+  border: 1px solid #d4d4ce;
+  padding: 1em 2em;
+  border-radius: 2em;
+  color: #6b6b66;
+}
+.images-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+.image-container{
+    height: 250px;
+    overflow: hidden;
+    border-radius: 1em;
+    position: relative;
+    flex: 0 0 calc((100% - (2 * 20px)) / 3)
+}
+.actual-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease
+}
+.image-container:hover .actual-image{
+    transform: scale(1.2);
+}
+.image-overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 8, 0.38);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.image-container:hover .image-overlay{
+    opacity: 1;
+}
+.image-caption{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0;
+    translate: translateY(10px)
+}
+@keyframes fadeinup {
+    0%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}
+.image-container:hover .image-caption{
+    animation-name: fadeinup;
+    animation-timing-function: 1;
+    animation-duration: 0.3s;
+    opacity: 1;
+}
