@@ -20,9 +20,13 @@ const addToFinalValueforSigns = (value) =>{
 }
 
 const convertToCalculation = () =>{
+    if(finalValue === ''){
+        console.log("no calculation")
+    }else{
  finalValue= String(eval(finalValue));
  console.log(finalValue);
  calculationDisplay.innerHTML = finalValue;
+ }
 }
 const backspaceFinalValue = () =>{
     let newStr = finalValue.slice(0, -1);
