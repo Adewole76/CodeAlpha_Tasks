@@ -5,6 +5,7 @@ const buttonsImage = document.querySelector('.button-image');
 const lightBoxImageContainer = document.querySelector('.light-box-image')
 const previousButton = document.querySelector('.previous');
 const nextButton = document.querySelector('.next');
+const imageFilterContainer = document.querySelector('.image-filter')
 console.log(filterButtons)
 console.log(imagesContainer)
 let Images = [
@@ -143,6 +144,22 @@ const filteringImagesArray = (buttonString) => {
 
 let myFilteredImages;
 let filterToggle = false
+
+imageFilterContainer.addEventListener('click', (event)=>{
+    if(event.target.closest('button')){
+        const particularFilterButton = event.target.closest('button');
+        console.log(particularFilterButton);
+        particularFilterButton.classList.add('active');
+
+        for(let i = 0; i < filterButtons.length; i++){
+            if(filterButtons[i].classList.contains('active') && filterButtons[i].textContent !== particularFilterButton.textContent){
+                filterButtons[i].classList.remove('active');
+                console.log(filterButtons);
+            }
+        }
+    }
+})
+
 
 for(let i = 0; i < filterButtons.length; i++){
     if(filterButtons[i].textContent === 'All'){
