@@ -138,23 +138,31 @@ const filteringImagesArray = (buttonString) => {
     const filteredImagesArray = Images.filter(image => image.ImageCategory === buttonString)
    console.log(filteredImagesArray.length)
    mappingImagesArray(filteredImagesArray);
+   return filteredImagesArray
 }
 
+let myFilteredImages;
+let filterToggle = false
 
 for(let i = 0; i < filterButtons.length; i++){
     if(filterButtons[i].textContent === 'All'){
         filterButtons[i].addEventListener('click',function(){
+        filterToggle = false
         mappingImagesArray(Images);
         })
     }else{
     filterButtons[i].addEventListener('click',function(){
         filteringImagesArray(filterButtons[i].textContent)
+        filterToggle = true;
+        myFilteredImages = filteringImagesArray(filterButtons[i].textContent)
+        console.log(myFilteredImages)
+        console.log(filterToggle)
     })
 }
 }
 let currentLightboxImage = 0;
 imagesContainer.addEventListener('click',(event) =>{
-  if(event.target.closest('.image-container')){
+  if(event.target.closest('.image-container') && filterToggle === false){
     const particularImage = event.target.closest('.image-container');
     console.log(particularImage);
     const particularImageId = particularImage.dataset.userId;
@@ -167,9 +175,27 @@ imagesContainer.addEventListener('click',(event) =>{
 }
 })
 nextButton.addEventListener('click', function(){
-    // currentLightboxImage = currentLightboxImage + 1;
-    console.log('i am working')
-    // console.log(currentLightboxImage)
-    // imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
-    // lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+     currentLightboxImage = currentLightboxImage + 1;
+     console.log(currentLightboxImage)
+     if(currentLightboxImage > Images.length - 1){
+        currentLightboxImage = 0;
+        imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
+        lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+     }else{
+     imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
+     lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+     }
+})
+previousButton.addEventListener('click', function(){
+    currentLightboxImage = currentLightboxImage - 1;
+     console.log(currentLightboxImage)
+     if(currentLightboxImage < 0){
+        currentLightboxImage = Images.length - 1;
+        imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
+        lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+     }else{
+     imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
+     lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
+
+     }
 })
