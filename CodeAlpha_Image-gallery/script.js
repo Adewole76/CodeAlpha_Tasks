@@ -172,9 +172,19 @@ imagesContainer.addEventListener('click',(event) =>{
     lightBoxView.classList.remove('hidden');
     lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
 
+}else if(event.target.closest('.image-container') && filterToggle === true){
+    const particularfilteredImage = event.target.closest('.image-container');
+    console.log(particularfilteredImage);
+    const particularfilteredImageId = particularfilteredImage.dataset.userId;
+    currentLightboxImage = Number(particularfilteredImageId);
+    let filteredImageTobeDisplayed = myFilteredImages.find((image,index)=> index === currentLightboxImage)
+    console.log(filteredImageTobeDisplayed);
+    lightBoxView.classList.remove('hidden');
+    lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${filteredImageTobeDisplayed.ImageSource}">`
 }
 })
 nextButton.addEventListener('click', function(){
+    if(filterToggle === false){
      currentLightboxImage = currentLightboxImage + 1;
      console.log(currentLightboxImage)
      if(currentLightboxImage > Images.length - 1){
@@ -185,8 +195,21 @@ nextButton.addEventListener('click', function(){
      imageToBeDisplay = Images.find((image,index) => index === currentLightboxImage)
      lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
      }
+    }else if(filterToggle === true){
+        currentLightboxImage = currentLightboxImage + 1;
+     console.log(currentLightboxImage)
+     if(currentLightboxImage > myFilteredImages.length - 1){
+        currentLightboxImage = 0;
+        filteredImageTobeDisplayed = myFilteredImages.find((image,index) => index === currentLightboxImage)
+        lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${filteredImageTobeDisplayed.ImageSource}">`
+     }else{
+     filteredImageTobeDisplayed = myFilteredImages.find((image,index) => index === currentLightboxImage)
+     lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${filteredImageTobeDisplayed.ImageSource}">`
+     }
+    }
 })
 previousButton.addEventListener('click', function(){
+    if(filterToggle === false){
     currentLightboxImage = currentLightboxImage - 1;
      console.log(currentLightboxImage)
      if(currentLightboxImage < 0){
@@ -198,4 +221,17 @@ previousButton.addEventListener('click', function(){
      lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${imageToBeDisplay.ImageSource}">`
 
      }
+    }else if(filterToggle === true){
+        currentLightboxImage = currentLightboxImage - 1;
+     console.log(currentLightboxImage)
+     if(currentLightboxImage < 0){
+        currentLightboxImage = myFilteredImages.length - 1;
+        filteredImageTobeDisplayed = myFilteredImages.find((image,index) => index === currentLightboxImage)
+        lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${filteredImageTobeDisplayed.ImageSource}">`
+     }else{
+     filteredImageTobeDisplayed = myFilteredImages.find((image,index) => index === currentLightboxImage)
+     lightBoxImageContainer.innerHTML = `<img class="lightbox-image" src="${filteredImageTobeDisplayed.ImageSource}">`
+
+     }
+    }
 })

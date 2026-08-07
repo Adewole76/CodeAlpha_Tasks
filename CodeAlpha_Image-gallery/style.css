@@ -29,13 +29,25 @@ header p{
 .image-filter{
     margin: 2em 0 2em 0;
 }
+.filter.active{
+    border: 1px solid #111110;
+    background-color: #111110;
+    color: white;
+    font-weight: 300;
+}
 .image-filter button{
   background-color: #fafaf8;
   border: 1px solid #d4d4ce;
   padding: 1em 2em;
   border-radius: 2em;
   color: #6b6b66;
+  transition: border 0.3s ease, color 0.3s ease;
 }
+.filter:hover{
+    border: 1px solid #111110;
+    color: #111110;
+}
+
 .images-container{
     display: flex;
     flex-wrap: wrap;
