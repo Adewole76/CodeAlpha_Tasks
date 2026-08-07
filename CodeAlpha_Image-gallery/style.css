@@ -35,6 +35,9 @@ header p{
     color: white;
     font-weight: 300;
 }
+.filter.active:hover{
+    color: white;
+}
 .image-filter button{
   background-color: #fafaf8;
   border: 1px solid #d4d4ce;
@@ -141,4 +144,46 @@ header p{
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.lightbox-view button{
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
+    color: white;
+    padding: 1em 1.5em;
+    border-radius: 2em;
+}
+.lightbox-view button:hover{
+    background-color:rgba(255, 255, 255,0.18)
+
+}
+.close-button-container{
+    text-align: right;
+    margin-top: 2em;
+    padding-right: 2em;
+}
+@media (max-width: 687px) {
+    .images-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .image-container{
+    height: 250px;
+    overflow: hidden;
+    border-radius: 1em;
+    position: relative;
+    }
+}
+@media (max-width: 460px) {
+    .images-container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media(max-width: 420px){
+    .light-box-image{
+        height: 250px;
+        width: 70%;
+        
+    }
 }

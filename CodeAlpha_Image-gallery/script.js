@@ -6,6 +6,7 @@ const lightBoxImageContainer = document.querySelector('.light-box-image')
 const previousButton = document.querySelector('.previous');
 const nextButton = document.querySelector('.next');
 const imageFilterContainer = document.querySelector('.image-filter')
+const closeButton = document.querySelector('.close-button')
 console.log(filterButtons)
 console.log(imagesContainer)
 let Images = [
@@ -251,4 +252,8 @@ previousButton.addEventListener('click', function(){
 
      }
     }
+})
+closeButton.addEventListener('click', function(){
+    lightBoxView.classList.add('hidden');
+    currentLightboxImage = 0;
 })
