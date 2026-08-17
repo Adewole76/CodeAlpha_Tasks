@@ -1,9 +1,17 @@
 *{
     box-sizing: border-box;
 }
+body{
+    background-color: #0A0A0A;
+    position: relative;
+}
 nav{
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left:0;
+    right: 0;
 }
 nav ul{
     padding: 0;
@@ -12,5 +20,68 @@ nav ul{
 }
 nav ul li{
     display: inline;
-    padding: 0 5px;
+    padding: 0 15px;
+    color: #8F8F8F;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+}
+.hire-btn{
+    background-color: #D6FF3F;
+    border: 1px solid transparent;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    font-weight: bold;
+    font-family: 'Inter'
+}
+.logo{
+    color: #D6FF3F;
+    font-family: 'Inter';
+    font-size: 16px;
+}
+.logo .logo-span-text{
+    color: #8F8F8F;
+}
+
+/*Home section styles*/
+.header-texts p{
+    background-color: #1A1A1A;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 1.5em;
+    border: 1px solid #8F8F8F;
+    font-family: 'JetBrains Mono';
+    font-size: 12px;
+    color:#8F8F8F;
+}
+.header-texts span{
+    color:#D6FF3F;
+    font-size: 1em;
+}
+.header-texts h3{
+    font-size: 6.5em;
+    color: #F2F2ED;
+    margin: 10px 0;
+}
+.header-texts em{
+    color: #D6FF3F;
+}
+.header-texts h5{
+    font-family: 'JetBrains Mono';
+    color: #8F8F8F;
+}
+.header-texts footer button{
+    padding: 1em 2em;
+    border-radius: 1.5em;
+    border: 1px solid;
+}
+.view-btn{
+    background-color: #D6FF3F;
+    font-weight: bold;
+}
+.get-btn{
+    background-color: #0A0A0A;
+    border-color: #8F8F8F;
+    border-width: 2em;
+    color: #8F8F8F;
 }
