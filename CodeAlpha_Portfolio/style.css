@@ -12,6 +12,7 @@ nav{
     top: 0;
     left:0;
     right: 0;
+    z-index: 100;
 }
 nav ul{
     padding: 0;
@@ -136,14 +137,15 @@ nav ul li{
 /*About Section styles*/
 .About-container{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
+    padding: 2em 0;
 }
 
 .section2{
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: 1fr 2fr;
+   gap: 2em;
 }
 .section-tag{
     font-family: 'JetBrains Mono';
@@ -152,4 +154,177 @@ nav ul li{
 .section2 h2{
     color: #F2F2ED;
     font-size: 4em;
+    max-width: 350px;
+}
+.about-text article p{
+    color:#8F8F8F;
+    font-family: 'Inter';
+    font-size: 14px;
+    max-width: 350px;
+}
+.downloadCv-btn{
+    color:#D6FF3F;
+    font-family: "JetBrains Mono"
+}
+.developer-stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    padding: 6em 0 0 0;
+}
+.stat{
+    background-color:#1A1A1A;
+    border: 1px solid #8F8F8F;
+    height: 200px;
+    padding: 2em 1em 1em 1em;
+    border-radius: 1em;
+} 
+.stat h3{
+    font-size: 3em;
+    color:#D6FF3F;
+    margin: 0;
+}
+.stat p{
+    color:#8F8F8F;
+    font-family: "JetBrains Mono";
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+
+/* Layout wrapper hiding content that overflows the screen boundaries */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+  padding: 3em 0; /* Slate background */
+  position: relative;
+  border-top: 1px solid #1A1A1A;
+  border-bottom: 1px solid #1A1A1A;
+}
+.black-diamond{
+    color: #D6FF3F;
+}
+/* Add a fade gradient mask over the left and right edges for a modern look */
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, transparent);
+}
+
+/* Continuous track container holding your badges */
+.marquee-track {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  min-width: 100%;
+  animation: scroll-left 25s linear infinite;
+}
+
+/* Pause moving track when a user hovers their mouse over it */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Individual skill badges */
+.skill-badge {
+  color:#8F8F8F;
+  background-color:#1A1A1A;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #8F8F8F;
+  border-radius: 50px;
+  font-family: sans-serif;
+  font-weight: 200;
+  white-space: nowrap;
+}
+
+/* Keyframes moving track exactly half its total duplicate width */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2rem)); /* Matches your container gap setting */
+  }
+}
+
+/* Accessibility: Stop motion for users who prefer reduced movement */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .marquee::before, .marquee::after {
+    display: none;
+  }
+}
+
+
+
+/*Experience section*/
+.Experience-section{
+    display: grid;
+    place-items: center;
+    padding: 4em 3em;
+}
+.section3-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.section3-container h1{
+    font-size: 4em;
+    color:#F2F2ED;
+    max-width: 350px;
+}
+.experience-texts p{
+  color:#8F8F8F;
+  font-family: "Inter";
+  font-size: 14px;
+  max-width: 350px;
+}
+.experience{
+    display: flex;
+}
+.experience h2{
+    color: white;
+    margin: 0;
+    font-family: 'Playfair Display'
+}
+.experience h3{
+    color:#D6FF3F;
+    font-family: "JetBrains Mono"
+}
+.experience .role-duration{
+    display: flex;
+    justify-content: space-between;
+}
+.experience .duration{
+    color:#8F8F8F;
+    font-family: "JetBrains Mono";
+    margin: 0;
+}
+.experience .description{
+    font-family: "Inter";
+    color:#8F8F8F;
+}
+.bullet{
+    color:#8F8F8F;
+    margin: 0 10px 0 0;
 }

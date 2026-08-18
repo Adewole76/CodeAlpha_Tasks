@@ -1,4 +1,5 @@
 "use strict"
+const experieneContainer = document.querySelector('.Experience-container')
 const Experiences = [
     {
         role: 'Frontend Developer',
@@ -13,13 +14,30 @@ const Experiences = [
         description: 'Core contributor to the issue tracking UI. Built the real-time collaboration layer and improved keyboard navigation accessibility across the product'  
     },
     {
-        role: 'UI Engineer-Contrac',
+        role: 'UI Engineer-Contract',
         duration: '2020-2021',
         Company: 'Stripe',
         description: 'Work on Stripe Dashboard internals - rebuilt the disputes flow and contributed performance improvements reducing LCP by 38%'  
     }
 ];
 
+const mappingExperience = () => {
+   const mappedExperiences = Experiences.map(experience => {
+    return `<div class="experience">
+    <p class="bullet">&#9654;</p>
+    <section class="experience-details">
+    <section class="role-duration">
+    <h2>${experience.role}</h2>
+    <p class="duration">${experience.duration}</p>
+    </section>
+    <h3>${experience.Company}</h3>
+    <p class="description">${experience.description}</p>
+    </section>
+    </div>`
+   })
+ experieneContainer.innerHTML = mappedExperiences;
+}
+mappingExperience()
 const Projects = [
     {
        classification: 'SaaS&bull;Analytics&bull;PosterCard',
@@ -50,3 +68,8 @@ const Projects = [
        link: 'https://github.com/'
     },
 ]
+const mappingProjects = () => {
+    const mappedProjects = Projects.map(project => {
+
+    });
+}
