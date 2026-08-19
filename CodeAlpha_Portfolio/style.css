@@ -5,6 +5,22 @@ body{
     background-color: #0A0A0A;
     position: relative;
 }
+.lime-btn:hover{
+    background-color: #CFFF4D;
+    transform: translateY(-2px);
+}
+.lime-btn{
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.lime-brd{
+  transition: color 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+}
+.lime-brd:hover{
+    color:#CFFF4D;
+    border: 1px solid #CFFF4D;
+}
 nav{
     display: flex;
     justify-content: space-between;
@@ -14,10 +30,22 @@ nav{
     right: 0;
     z-index: 100;
 }
+.animated-underline{
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+   height: 2px;
+   background-color:#D6FF3F;
+   display: inline-block;
+   display: block;
+}
 nav ul{
     padding: 0;
     list-style-type: none;
-    display: inline-block;
+    display: flex;
+}
+.links-button{
+    display: flex;
 }
 nav ul li{
     display: inline;
@@ -26,6 +54,31 @@ nav ul li{
     font-family: 'Inter';
     font-weight: 400;
     font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.home-hero{
+ animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px)
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+nav ul li:hover{
+    color:#D6FF3F;
+}
+nav ul li:hover .animated-underline{
+    visibility: visible;
+    transform: scaleX(1);
+
 }
 .hire-btn{
     background-color: #D6FF3F;
@@ -33,12 +86,14 @@ nav ul li{
     padding: 1em 1.5em;
     border-radius: 1.5em;
     font-weight: bold;
-    font-family: 'Inter'
+    font-family: 'Inter';
+    vertical-align: baseline;
 }
 .logo{
     color: #D6FF3F;
     font-family: 'Inter';
     font-size: 16px;
+    margin: none
 }
 .logo .logo-span-text{
     color: #8F8F8F;
@@ -63,7 +118,7 @@ nav ul li{
   height: 300px;
   background: #D6FF3F;
   opacity: 0.12;
-  filter: blur(120px);
+  filter: blur(300px);
   border-radius: 50%;
   bottom: -90px;
   top: 100;
@@ -104,6 +159,7 @@ nav ul li{
     font-size: 6.5em;
     color: #F2F2ED;
     margin: 10px 0;
+    font-family: "Playfair Display"
 }
 .header-texts em{
     color: #D6FF3F;
@@ -291,7 +347,7 @@ nav ul li{
 .section3-container h1{
     font-size: 4em;
     color:#F2F2ED;
-    max-width: 350px;
+    max-width: 400px;
 }
 .experience-texts p{
   color:#8F8F8F;
@@ -327,4 +383,161 @@ nav ul li{
 .bullet{
     color:#8F8F8F;
     margin: 0 10px 0 0;
+}
+
+/*Project Section Styles*/
+.Project-section{
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+}
+.section2-container h2{
+    color: white;
+    font-family: 'Playfair Display';
+    color: white;
+    margin: 0;
+    font-size: 3em;
+}
+.section2-container header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+.All-project-link{
+    margin: 0;
+    padding-top: 1.5em;
+    color:#8F8F8F;
+    font-family: "JetBrains Mono";
+    font-size: 14px;
+}
+.projects-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2em;
+    row-gap: 2em;
+    padding: 0 3em;
+}
+
+.project{
+    border: 1px solid #8F8F8F;
+    border-radius: 1em;
+}
+.project h3{
+    color:#F2F2ED;
+    font-family: "Playfair Display";
+    font-size: 2em;
+    margin: 0;
+}
+
+.project-details{
+    padding-left: 1em;
+    background-color:#1A1A1A;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    padding-bottom: 2em;
+}
+
+.project-classification{
+    color:#D6FF3F;
+    font-family: "JetBrains Mono"
+}
+.project img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.project-link{
+    font-family: "JetBrains Mono";
+    color:#D6FF3F;
+    font-size: 12px;
+}
+.Project-image-container{
+    height: 200px;
+    width: 100%;
+}
+.project-description{
+    color:#8F8F8F;
+    font-family: "Inter";
+    font-size: 14px;
+    max-width: 400px;
+}
+.project-stack{
+    list-style-type: none;
+    padding-left: 0;
+}
+ .project-stack li{
+    display: inline-block;
+    margin-right: 1em;
+    background-color: #1A1A1A;
+    padding: 0.5em 1.5em;
+    color:#8F8F8F;
+    border: 1px solid #8F8F8F;
+    border-radius: 1.5em;
+    font-family: "Inter"
+ }
+
+ /*Contact Section*/
+ .contact-section{
+    display: grid;
+    place-items: center;
+    margin-top: 3em;
+ }
+ .section3 h1{
+    color: white;
+    font-size: 4.5em;
+    max-width: 450px;
+    text-align: center;
+    margin: 0;
+    font-family: "Playfair Display";
+ }
+ .current-status{
+    color:#8F8F8F;
+    max-width: 425px;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 14px;
+ }
+ .say-hello{
+    background-color: #D6FF3F;
+    color: black;
+    border: 1px solid transparent;
+    padding: 1em 2em;
+    border-radius: 2em;
+ }
+ .section3 footer{
+    font-family: "Inter"
+ }
+ .section3 footer a{
+    background-color: #1A1A1A;
+    border: 1px solid #8F8F8F;
+    color:#8F8F8F;
+    padding: 1em 2em;
+    border-radius: 2em;
+ }
+ .section3 section{
+    display: grid;
+    place-items: center;
+ }
+ .section3 em{
+    color:#D6FF3F;
+ }
+ 
+ .Remarks-section{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #8F8F8F;
+    font-family: "JetBrains Mono" ;
+    font-size: 14px;
+}
+.year-container{
+    color:#8F8F8F;
+}
+.media{
+    color:#8F8F8F;
+}
+.media span{
+    color:#D6FF3F;
 }
