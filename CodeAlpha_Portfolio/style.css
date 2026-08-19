@@ -21,7 +21,11 @@ body{
     color:#CFFF4D;
     border: 1px solid #CFFF4D;
 }
-nav{
+.navbar.scrolled {
+    background-color: #0A0A0A;
+    border-bottom: 0.5px solid #8F8F8F;
+}
+.navbar{
     display: flex;
     justify-content: space-between;
     position: sticky;
@@ -29,6 +33,9 @@ nav{
     left:0;
     right: 0;
     z-index: 100;
+    padding: 1em 1em 0 1em;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    background-color: transparent;
 }
 .animated-underline{
   transform: scaleX(0);
@@ -338,7 +345,7 @@ nav ul li:hover .animated-underline{
 .Experience-section{
     display: grid;
     place-items: center;
-    padding: 4em 3em;
+    padding: 4em 6em;
 }
 .section3-container{
     display: grid;
@@ -530,7 +537,7 @@ nav ul li:hover .animated-underline{
     justify-content: space-between;
     border-top: 1px solid #8F8F8F;
     font-family: "JetBrains Mono" ;
-    font-size: 14px;
+    font-size: 12px;
 }
 .year-container{
     color:#8F8F8F;
