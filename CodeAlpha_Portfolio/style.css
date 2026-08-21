@@ -79,7 +79,8 @@ nav ul li{
 }
 .home-hero{
  animation: floating 3s ease-in-out infinite;
-}
+ z-index: 100;
+} 
 
 @keyframes floating {
     0%{
@@ -160,6 +161,10 @@ nav ul li:hover .animated-underline{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
+}
+.header-texts{
+    z-index: 1000;
 }
 .header-texts p{
     background-color: #1A1A1A;
@@ -245,8 +250,11 @@ nav ul li:hover .animated-underline{
 .developer-stats{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     column-gap: 1em;
+    row-gap: 1em;
     padding: 6em 0 0 0;
+    height: 50%;
 }
 .stat{
     background-color:#1A1A1A;
@@ -283,6 +291,7 @@ nav ul li:hover .animated-underline{
 }
 .black-diamond{
     color: #D6FF3F;
+    font-size: 11px;
 }
 /* Add a fade gradient mask over the left and right edges for a modern look */
 .marquee::before,
@@ -322,11 +331,12 @@ nav ul li:hover .animated-underline{
 .skill-badge {
   color:#8F8F8F;
   background-color:#1A1A1A;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem;
   border: 1px solid #8F8F8F;
   border-radius: 50px;
   font-family: sans-serif;
-  font-weight: 200;
+  font-weight: 100;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -358,11 +368,12 @@ nav ul li:hover .animated-underline{
 .Experience-section{
     display: grid;
     place-items: center;
-    padding: 4em 6em;
+    padding: 2em 4em;
+    width: 100%;
 }
 .section3-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
 }
 .section3-container h1{
     font-size: 4em;
@@ -441,6 +452,8 @@ nav ul li:hover .animated-underline{
 .project{
     border: 1px solid #1A1A1A;
     border-radius: 1em;
+    display: grid;
+    grid-template-rows: 40% 60%;
 }
 .project h3{
     color:#F2F2ED;
@@ -560,4 +573,82 @@ nav ul li:hover .animated-underline{
 }
 .media span{
     color:#D6FF3F;
+}
+
+@media (max-width: 753px) {
+    .section1{
+        display: block;
+    }
+    .header-texts{
+        display: inline-block;
+    }
+    .header-texts h3{
+        font-size: 6em;
+    }
+    .About-container{
+        place-items:initial;
+        padding: 2em;
+    }
+    .Project-section{
+        padding: 0 2em;
+    }
+    .section2{
+        grid-template-columns: 1fr;
+    }
+    .developer-stats{
+        padding-top: 2em;
+    }
+
+    .Experience-section{
+        padding: 2em;
+    }
+    .section3-container{
+        grid-template-columns: 1fr;
+        row-gap: 1em;
+    }
+    .section2 h2{
+        max-width: 500px;
+        display: block;
+    }
+}
+@media (max-width: 543px) {
+    .links-button ul, .hire-btn-container{
+        display: none;
+    }
+    .hamburger-image{
+        visibility: visible;
+    }
+    .section1 h3{
+        font-size: 4.5em;
+    }
+    .Home-container{
+        padding: 4em 1em;
+    }
+    .Experience-section{
+        padding: 2em 1em;
+    }
+     .About-container{
+        place-items:initial;
+        padding: 2em 1em;
+    }
+    .Project-section{
+        padding: 0 1em;
+    }
+    .home-hero{
+        width: 128px;
+    }
+    .projects-container{
+        grid-template-columns: 1fr;
+    }
+    .section3 h1{
+      font-size: 3em;
+    }
+}
+@media (max-width: 428px) {
+    .stat h3{
+        font-size: 2em;
+    }
+    .section3footer button, a{
+        font-size: 12px;
+    }
 }
