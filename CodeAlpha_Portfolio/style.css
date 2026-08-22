@@ -262,7 +262,11 @@ nav ul li:hover .animated-underline{
     height: 200px;
     padding: 2em 1em 1em 1em;
     border-radius: 1em;
+    transition: border 0.3s ease;
 } 
+.stat:hover{
+    border: 1px solid #D6FF3F;
+}
 .stat h3{
     font-size: 3em;
     color:#D6FF3F;
@@ -454,6 +458,12 @@ nav ul li:hover .animated-underline{
     border-radius: 1em;
     display: grid;
     grid-template-rows: 40% 60%;
+    transition: transform 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+}
+.project:hover{
+    transform:translateY(-5px);
+    border: 1px solid #D6FF3F;
 }
 .project h3{
     color:#F2F2ED;
@@ -480,6 +490,7 @@ nav ul li:hover .animated-underline{
     height: 100%;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
+    transition: transform 0.5s ease;
 }
 .project-link{
     font-family: "JetBrains Mono";
@@ -489,6 +500,13 @@ nav ul li:hover .animated-underline{
 .Project-image-container{
     height: 200px;
     width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+.Project-image-container img:hover{
+    transform: scale(1.2);
+    cursor: zoom-in;
 }
 .project-description{
     color:#8F8F8F;
@@ -642,6 +660,20 @@ nav ul li:hover .animated-underline{
     }
     .section3 h1{
       font-size: 3em;
+    }
+
+    .Remarks-section{
+        flex-wrap: wrap;
+    }
+    .section2-container h2{
+        font-size: 2.5em;
+    }
+    .experience h2{
+        font-size: 16px;
+    }
+    .All-project-link{
+        font-size: 12px;
+        word-wrap: none;
     }
 }
 @media (max-width: 428px) {
