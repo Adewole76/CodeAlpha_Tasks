@@ -6,16 +6,17 @@ body{
     position: relative;
 }
 .sidebar{
-    display: fixed;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    z-index: 100;
     transform: translateY(-100%);
-    visibility: hidden;
-
+    transition: transform 0.3s ease;
+    padding: 3em 1em 2em 1em;
+    background-color: #0A0A0A;
 }
 .active{
-    visibility: visible;
     transform: translateY(0%);
 }
 .sidebar ul{
@@ -70,7 +71,7 @@ body{
     top: 0;
     left:0;
     right: 0;
-    z-index: 100;
+    z-index: 1000;
     padding: 1em 1em 0 1em;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
     background-color: transparent;
@@ -708,5 +709,16 @@ nav ul li:hover .animated-underline{
     }
     .section3footer button, a{
         font-size: 12px;
+    }
+}
+@media(max-width: 376px){
+    .section1 h3{
+        font-size: 3em;
+    }
+    .section2 h2{
+        font-size: 3em;
+    }
+    .section3-container h1{
+      font-size: 3em;
     }
 }

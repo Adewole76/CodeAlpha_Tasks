@@ -3,12 +3,19 @@ const currentYear = new Date().getFullYear();
 console.log(currentYear)
 const yearContainer = document.querySelector('.year-container');
 yearContainer.innerHTML = `&copy;${currentYear} Segun Adewole`
+const hamburgerImage = document.querySelector('.hamburger-image');
 const experieneContainer = document.querySelector('.Experience-container')
 const projectsContainer = document.querySelector('.projects-container')
 const sideBar = document.querySelector('.sidebar');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 hamburgerMenu.addEventListener('click', function(){
-
+if(sideBar.classList.contains('active')){
+  sideBar.classList.remove('active');
+  hamburgerImage.src = 'images/hamburger.png';
+}else{
+  sideBar.classList.add('active');
+  hamburgerImage.src = 'images/close.png'
+}
 })
 const Experiences = [
     {
