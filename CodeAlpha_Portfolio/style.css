@@ -5,6 +5,32 @@ body{
     background-color: #0A0A0A;
     position: relative;
 }
+.sidebar{
+    display: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(-100%);
+    visibility: hidden;
+
+}
+.active{
+    visibility: visible;
+    transform: translateY(0%);
+}
+.sidebar ul{
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar ul li{
+    color:#8F8F8F;
+    font-family: "Inter";
+    font-weight: 400px;
+    padding: 0.5em 0;
+}
+.sidebar .hire-btn{
+    width: 100%;
+}
 .lime-btn:hover{
     background-color: #CFFF4D;
     transform: translateY(-2px);

@@ -5,6 +5,11 @@ const yearContainer = document.querySelector('.year-container');
 yearContainer.innerHTML = `&copy;${currentYear} Segun Adewole`
 const experieneContainer = document.querySelector('.Experience-container')
 const projectsContainer = document.querySelector('.projects-container')
+const sideBar = document.querySelector('.sidebar');
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+hamburgerMenu.addEventListener('click', function(){
+
+})
 const Experiences = [
     {
         role: 'Frontend Developer',
