@@ -11,110 +11,110 @@ console.log(filterButtons)
 console.log(imagesContainer)
 let Images = [
     {
-        ImageSource: 'images/Stuff.jpg',
+        ImageSource: 'outputImgs/Stuff.webp',
         ImageCategory: 'Nature',
         ImageCaption: 'God of war',
         ImageId: 1
     },
 
     {
-        ImageSource: 'images/Stuff2.jpg',
+        ImageSource: 'outputImgs/Stuff2.webp',
         ImageCategory: 'Portrait',
         ImageCaption: 'Living Room',
         ImageId: 2
     },
     {
-        ImageSource: 'images/Stuff3.jpg',
+        ImageSource: 'outputImgs/Stuff3.webp',
         ImageCategory: 'Travel',
         ImageCaption: 'Architecture',
         ImageId: 3
     },
     {
-        ImageSource: 'images/Stuff4.jpg',
+        ImageSource: 'outputImgs/Stuff4.webp',
         ImageCategory: 'Nature',
         ImageCaption: 'Play room',
         ImageId: 4
     },
     {
-        ImageSource: 'images/Stuff5.jpg',
+        ImageSource: 'outputImgs/Stuff5.webp',
         ImageCategory: 'Portrait',
         ImageCaption: 'Street',
         ImageId: 5
     },
     {
-        ImageSource: 'images/Stuff6.jpg',
+        ImageSource: 'outputImgs/Stuff6.webp',
         ImageCategory: 'Travel',
         ImageCaption: 'bus',
         ImageId: 6
     },
     {
-        ImageSource: 'images/Stuff7.jpg',
+        ImageSource: 'outputImgs/Stuff7.webp',
         ImageCategory: 'Nature',
         ImageCaption: 'Restaurant',
         ImageId: 7
     },
     {
-        ImageSource: 'images/Stuff8.jpg',
+        ImageSource: 'outputImgs/Stuff8.webp',
         ImageCategory: 'Portrait',
         ImageCaption: 'Art',
         ImageId: 8
     },
     {
-        ImageSource: 'images/Stuff9.jpg',
+        ImageSource: 'outputImgs/Stuff9.webp',
         ImageCategory:'Nature',
         ImageCaption: 'Chinese restaurant',
         ImageId: 9
     },
     {
-        ImageSource: 'images/Stuff10.jpg',
+        ImageSource: 'outputImgs/Stuff10.webp',
         ImageCategory: 'Travel',
         ImageCaption: 'Road Street',
         ImageId: 10
     },
     {
-        ImageSource: 'images/Stuff11.jpg',
+        ImageSource: 'outputImgs/Stuff11.webp',
         ImageCategory: 'Nature',
         ImageCaption: 'City View',
         ImageId: 11
     },
     {
-        ImageSource: 'images/Stuff12.jpg',
+        ImageSource: 'outputImgs/Stuff12.webp',
         ImageCategory: 'Portrait',
         ImageCaption: 'Wall Art',
         ImageId: 12
     },
     {
-        ImageSource: 'images/Stuff13.jpg',
+        ImageSource: 'outputImgs/Stuff13.webp',
         ImageCategory: 'Portrait',
         ImageCaption: 'Old TV',
         ImageId: 13
     },
     {
-        ImageSource: 'images/Stuff14.jpg',
+        ImageSource: 'outputImgs/Stuff14.webp',
         ImageCategory: 'Travel',
         ImageCaption: 'Shadow',
         ImageId: 14
     },
     {
-        ImageSource: 'images/Stuff15.jpg',
+        ImageSource: 'outputImgs/Stuff15.webp',
         ImageCategory: 'Nature',
         ImageCaption: 'Girl Working on Compute',
         ImageId: 15
     },
     {
-        ImageSource: 'images/Stuff16.jpg',
+        ImageSource: 'outputImgs/Stuff16.webp',
         ImageCategory: 'Portrait',
         ImageCaption: 'Wall SHdow',
         ImageId: 16
     },
     {
-        ImageSource: 'images/Stuff17.jpg',
+        ImageSource: 'outputImgs/Stuff17.webp',
         ImageCategory: 'Travel',
         ImageCaption: 'Detroit',
         ImageId: 17
     },
     {
-        ImageSource: 'images/Stuff18.jpg',
+        ImageSource: 'outputImgs/Stuff18.webp',
         ImageCategory: 'Nature',
         ImageCaption: 'Clothes Store',
         ImageId: 18
@@ -125,7 +125,7 @@ const mappingImagesArray = (arr) => {
 const mappedImagesArray = arr.map((image,index) => {
     return `
     <div class="image-container" data-user-id="${index}">
-    <img class="actual-image" src="${image.ImageSource}">
+    <img class="actual-image" src="${image.ImageSource}" loading = "lazy">
     <div class="image-overlay"></div>
     <p class="image-caption">${image.ImageCaption}</p>
     </div>
